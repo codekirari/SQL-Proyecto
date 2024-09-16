@@ -68,11 +68,10 @@ DROP TABLE IF EXISTS factura;
 CREATE TABLE factura (
     id_factura INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     id_catalogo INT NOT NULL,
+    id_cliente INT NOT NULL,
     id_uniforme_personalizadodetalle_facturauniforme_personalizado INT,
-    cantidad INT NOT NULL,
     total DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY (id_catalogo) REFERENCES catalogo(id_catalogo),
-    FOREIGN KEY (id_uniforme_personalizado) REFERENCES Uniforme_Personalizado(id_uniforme_personalizado)
+    FOREIGN KEY (id_catalogo) REFERENCES catalogo(id_catalogo)
 );
  
 DROP TABLE IF EXISTS detalle_factura;
